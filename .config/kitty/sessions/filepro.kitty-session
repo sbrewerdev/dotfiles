@@ -1,0 +1,14 @@
+
+new_tab
+layout splits
+enabled_layouts splits
+set_layout_state {"pairs": {"one": {"horizontal": false, "one": 1, "two": 8}, "two": {"horizontal": false, "one": 7, "two": 9}}, "opts": {"default_axis_is_horizontal": true}, "class": "Splits", "all_windows": {"active_group_idx": 0, "active_group_history": [2, 5, 9, 8, 1, 7], "window_groups": [{"id": 1, "window_ids": [1]}, {"id": 8, "window_ids": [8]}, {"id": 7, "window_ids": [7]}, {"id": 9, "window_ids": [9]}]}}
+cd ../../..
+
+launch 'kitty-unserialize-data={"id": 1}'
+focus
+launch 'kitty-unserialize-data={"id": 8}'
+launch 'kitty-unserialize-data={"id": 7}'
+launch 'kitty-unserialize-data={"id": 9}'
+
+focus_tab 0

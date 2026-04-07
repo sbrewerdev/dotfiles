@@ -1,0 +1,96 @@
+allow_remote_control yes
+listen_on unix:/tmp/kitty
+shell_integration no-sudo
+
+shell zsh --login --interactive
+
+copy_on_select yes
+
+font_family Anonymous Pro
+font_size 18
+
+#: Cursor stuff
+# cursor_shape beam
+# cursor_beam_thickness 1.5
+# cursor_underline_thickness 2.0
+cursor_blink_interval 0
+cursor_stop_blinking_after 0
+cursor_trail 1
+cursor_trail_start_threshold 0
+
+#: Appearance
+
+# BEGIN_KITTY_THEME
+# ANSI 1987
+include current-theme.conf
+# END_KITTY_THEME
+
+include color-overrides.conf
+
+window_padding_width 0
+background_opacity 0.9
+background_blur 6
+
+
+# Keep your styles
+active_tab_font_style   bold-italic
+inactive_tab_font_style normal
+
+tab_bar_style powerline
+tab_powerline_style round
+tab_bar_filter session:~ or session:^$
+
+tab_bar_min_tabs 1
+tab_bar_edge top
+tab_title_max_length 50
+tab_title_template " {index}: {title}"
+# Active tab shows the active session name as a label
+active_tab_title_template "[{active_session_name}] {index}: {title} "
+# tab_bar_style powerline
+# tab_title_template "{session_name} {tab.active_wd.rsplit('/', 1)[-1]}"
+# shell_integration no-title
+# tab_bar_filter session:~ or session:^$
+
+macos_option_as_alt both
+hide_window_decorations titlebar-only
+
+enabled_layouts splits
+
+#: Keyboard Shortcuts
+
+map ctrl+s>\ launch --location=vsplit
+map ctrl+s>- launch --location=hsplit
+
+map ctrl+h neighboring_window left
+map ctrl+l neighboring_window right
+map ctrl+k neighboring_window up
+map ctrl+j neighboring_window down
+ 
+map ctrl+shift+H move_window left
+map ctrl+shift+L move_window right
+map ctrl+shift+K move_window up
+map ctrl+shift+J move_window down
+
+# Replace the default Cmd+T with a session-safe tab creation via remote control
+map cmd+t new_tab_with_cwd
+
+map F1 send_text all \x1b[11~
+map F2 send_text all \x1b[12~
+map F3 send_text all \x1b[13~
+map F4 send_text all \x1b[14~
+map home send_text all \x1b[1~
+
+#: Session Binds/Configuration (tmux-like)
+startup_session $HOME/.config/kitty/sessions/home.kitty-session
+
+map ctrl+shift+s save_as_session --use-foreground-process --base-dir ~/.config/kitty/sessions
+
+# Browse and select from the list of projects located in the kitty sessions folder
+map ctrl+s>s goto_session ~/.config/kitty/sessions
+
+map ctrl+s>d goto_session $HOME/.config/kitty/sessions/dotfiles.kitty-session
+map ctrl+s>f goto_session $HOME/.config/kitty/sessions/filepro.kitty-session
+map ctrl+s>g>p goto_session $HOME/.config/kitty/sessions/github-sbrewerdev.kitty-session
+map ctrl+s>g>w goto_session $HOME/.config/kitty/sessions/github-sbrewerfait.kitty-session
+map ctrl+s>h goto_session $HOME/.config/kitty/sessions/home.kitty-session
+map ctrl+s>n goto_session $HOME/.config/kitty/sessions/notes.kitty-session

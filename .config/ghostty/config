@@ -1,0 +1,36 @@
+# theme = filePro
+# theme = CyberpunkScarletProtocol
+# theme = Hipster Green
+# theme = Blue Matrix
+# theme = Scarlet Protocol
+# theme = NvimLight
+# theme = active_theme
+# theme = filePro
+theme = midnight
+background = #000000
+# foreground = #ff3336
+font-family = Anonymous Pro
+font-size = 20
+background-opacity = 0.7
+background-blur = 20
+# window-decoration = none
+macos-titlebar-style = hidden 
+# gtk-titlebar = false
+# custom-shader = shaders/bloom025.glsl
+
+keybind = f1=esc:[11~
+keybind = f2=esc:[12~
+keybind = f3=esc:[13~
+keybind = f4=esc:[14~
+keybind = f5=esc:[15~
+keybind = f6=esc:[17~
+keybind = f7=esc:[18~
+keybind = f8=esc:[19~
+keybind = f9=esc:[20~
+keybind = f10=esc:[21~
+keybind = f11=esc:[23~
+keybind = f12=esc:[24~
+keybind = home=esc:[1~
+
+keybind = ctrl+s>\=new_split:right
+keybind = ctrl+s>-=new_split:down

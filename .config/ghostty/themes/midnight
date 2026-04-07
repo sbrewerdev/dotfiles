@@ -1,0 +1,26 @@
+# Midnight Theme
+    
+background=#08111b
+foreground=#00ff92
+selection-background=#1e3797
+selection-foreground=#00cadb
+cursor-color=#00ff92
+bold-color=bright
+split-divider-color=#00ff92
+
+palette = 0=#0e1f30
+palette = 1=#e87878
+palette = 2=#44e094
+palette = 3=#e0de82
+palette = 4=#3d8fd4
+palette = 5=#c088e0
+palette = 6=#00cadb
+palette = 7=#cccccc
+palette = 8=#1a3548
+palette = 9=#ff6e6e
+palette = 10=#00ff92
+palette = 11=#fefc7f
+palette = 12=#0271cf
+palette = 13=#d97bff
+palette = 14=#00eeff
+palette = 15=#ffffff

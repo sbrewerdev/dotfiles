@@ -1,0 +1,3 @@
+[submodule ".config/brewvim"]
+	path = .config/brewvim
+	url = https://github.com/sbrewerdev/brewvim.git

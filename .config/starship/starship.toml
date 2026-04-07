@@ -1,0 +1,73 @@
+# starship.toml
+
+add_newline = false
+palette = "default"
+
+format = """
+[╭](fg:separator)\
+$status\
+$username$env_var\
+$directory\
+$git_branch$git_status\
+$cmd_duration\
+$line_break\
+[╰](fg:separator)\
+$character\
+"""
+
+###########################################
+
+[palettes.default]
+prompt_ok = "#8047c1"
+prompt_err = "#ff0000"
+icon = "#161514"
+separator = "#35312c"
+background = "#35312c"
+
+directory = "#0CC40F"
+username = "#5f00ff"
+git_info = "#ff6a00"
+duration = "#eeff00"
+status = "#ff0000"
+
+###########################################
+
+[env_var.UNAME]
+format = "[@$env_value ](bg:background)[](fg:background)"
+
+[username]
+show_always = true
+format = "[─](fg:separator)[](fg:username)[🫠](fg:icon bg:username)[](fg:username bg:background)[ $user](bg:background)[](fg:background)"
+
+
+[character]
+success_symbol = "[❯](fg:prompt_ok)"
+error_symbol = "[❯](fg:prompt_err)"
+
+[directory]
+truncation_symbol = "../"
+truncation_length = 3
+format = "[─](fg:separator)[](fg:directory)[](fg:icon bg:directory)[](fg:directory bg:background)[ $path](bg:background)[](fg:background)"
+
+[git_branch]
+symbol = " "
+format = "[─](fg:separator)[](fg:git_info)[](fg:icon bg:git_info)[](fg:git_info bg:background)[ $branch](bg:background)"
+
+[git_status]
+format = "[ $all_status$ahead_behind ](bg:background)[](fg:background)"
+
+[status]
+format = "[─](fg:separator)[](fg:status)[](fg:icon bg:status)[](fg:status bg:background)[ $status](bg:background)[](fg:background)"
+pipestatus = true
+pipestatus_separator = "-"
+pipestatus_segment_format = "$status"
+pipestatus_format = "[─](fg:separator)[](fg:status)[](fg:icon bg:status)[](fg:status bg:background)[ $pipestatus](bg:background)[](fg:background)"
+disabled = false
+
+[cmd_duration]
+format = "[─](fg:separator)[](fg:duration)[󱐋](fg:icon bg:duration)[](fg:duration bg:background)[ $duration](bg:background)[](fg:background)"
+min_time = 1000
+
+[time]
+format = "[](fg:duration)[󰥔](fg:icon bg:duration)[](fg:duration bg:background)[ $time](bg:background)[](fg:background)"
+disabled = false
