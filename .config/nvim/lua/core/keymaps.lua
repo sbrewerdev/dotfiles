@@ -26,6 +26,8 @@ map("n", "<leader>-", "<CMD>Oil --float<CR>", { desc = "Toggle Oil File Explorer
 map("n", "L", "<Cmd>bnext<CR>", { desc = "Next buffer" })
 -- Map to previous buffer (e.g., Shift-H)
 map("n", "H", "<Cmd>bprevious<CR>", { desc = "Previous buffer" })
+-- Delete current buffer
+-- map("n", "<leader>bd", "<Cmd>bdelete<CR>", { desc = "Close Tab" })
 
 -- ═══════════════════════════════════════════════════════════
 -- WINDOW MANAGEMENT (splitting and navigation)
@@ -60,15 +62,6 @@ map("v", ">", ">gv")
 -- Better paste (doesn't replace clipboard with deleted text)
 map("v", "p", '"_dP', opts)
 
--- auto close pairs
--- map("i", "'", "''<left>") -- commented out - smart!
-map("i", "`", "``<left>")
-map("i", '"', '""<left>')
-map("i", "(", "()<left>")
-map("i", "[", "[]<left>")
-map("i", "{", "{}<left>")
-map("i", "<", "<><left>")
-
 -- ═══════════════════════════════════════════════════════════
 -- FOLDING NAVIGATION (for code organization)
 -- ═══════════════════════════════════════════════════════════
@@ -76,4 +69,7 @@ map("i", "<", "<><left>")
 -- Close all folds except current one (great for focus)
 map("n", "zv", "zMzvzz", { desc = "Close all folds except the current one" })
 
+-- ═══════════════════════════════════════════════════════════
+-- Plugin stuff (for managing plugins)
+-- ═══════════════════════════════════════════════════════════
 map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>")

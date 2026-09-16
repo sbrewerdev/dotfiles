@@ -6,7 +6,7 @@ export PATH="$PATH:/Users/sbrewer/.cargo/bin"
 export WEZTERM_CONFIG_FILE="/Users/sbrewer/.config/wezterm/wezterm.lua"
 export STARSHIP_CONFIG="/Users/sbrewer/.config/starship/starship.toml"
 export EDITOR="nvim"
-export NVIM_APPNAME="brewvim"
+# export NVIM_APPNAME="brewvim"
 export RESTERM_CONFIG_DIR="/Users/sbrewer/.config/resterm/"
 
 # Added by Toolbox App
