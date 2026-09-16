@@ -3,7 +3,6 @@ fpsessions/
 .isolated-storage/
 iterm2/
 raycast/
-.config/scripts/
 .config/spotatui/client.yml
 .config/spotatui/spotatui_panic.log
 .config/spotatui/streaming_cache/credentials.json
