@@ -1,0 +1,3 @@
+# filename_aliases.yaml
+dockerignore: docker
+dockerfile*: docker
