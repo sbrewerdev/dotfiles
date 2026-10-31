@@ -18,6 +18,31 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 map("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
+if vim.g.vscode then
+    map("v", "<", "<gv")
+    map("v", ">", ">gv")
+    map("v", "p", '"_dP', opts)
+
+    local function vscode_action(command)
+        return function()
+            require("vscode").action(command)
+        end
+    end
+
+    map("n", "-", vscode_action("workbench.files.action.focusFilesExplorer"), { desc = "Open File Explorer" })
+    map("n", "L", vscode_action("workbench.action.nextEditor"), { desc = "Next editor" })
+    map("n", "H", vscode_action("workbench.action.previousEditor"), { desc = "Previous editor" })
+    map("n", "<C-h>", vscode_action("workbench.action.focusLeftGroup"), { desc = "Go to Left Window" })
+    map("n", "<C-j>", vscode_action("workbench.action.focusBelowGroup"), { desc = "Go to Lower Window" })
+    map("n", "<C-k>", vscode_action("workbench.action.focusAboveGroup"), { desc = "Go to Upper Window" })
+    map("n", "<C-l>", vscode_action("workbench.action.focusRightGroup"), { desc = "Go to Right Window" })
+    map("n", "<leader>ww", vscode_action("workbench.action.focusPreviousGroup"), { desc = "Other Window" })
+    map("n", "<leader>wd", vscode_action("workbench.action.closeActiveEditor"), { desc = "Close editor" })
+    map("n", "<leader>w-", vscode_action("workbench.action.splitEditorDown"), { desc = "Split Window Below" })
+    map("n", "<leader>w|", vscode_action("workbench.action.splitEditorRight"), { desc = "Split Window Right" })
+    return
+end
+
 -- Open Oil File Explorer
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil File Explorer" })
 map("n", "<leader>-", "<CMD>Oil --float<CR>", { desc = "Toggle Oil File Explorer" })

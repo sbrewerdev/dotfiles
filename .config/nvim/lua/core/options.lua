@@ -1,5 +1,13 @@
 local o = vim.opt
 
+if vim.g.vscode then
+	o.ignorecase = true
+	o.smartcase = true
+	o.hlsearch = true
+	o.clipboard:append("unnamedplus")
+	return
+end
+
 o.number = true
 o.relativenumber = true
 o.showmode = false

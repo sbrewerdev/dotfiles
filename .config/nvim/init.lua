@@ -1,3 +1,9 @@
+if vim.g.vscode then
+    require("core.options")
+    require("core.keymaps")
+    return
+end
+
 require("vim._core.ui2").enable({
     enable = true,
     msg = {
