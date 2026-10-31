@@ -6,17 +6,21 @@
 # theme = NvimLight
 # theme = active_theme
 # theme = filePro
-theme = midnight
+theme = active-theme-filepro
+window-colorspace = display-p3
+alpha-blending = linear-corrected
+font-thicken = true
+font-thicken-strength = 70
 background = #000000
 # foreground = #ff3336
-font-family = Anonymous Pro
 font-size = 20
 background-opacity = 0.7
-background-blur = 20
+background-blur = macos-glass-regular 
 # window-decoration = none
 macos-titlebar-style = hidden 
 # gtk-titlebar = false
 # custom-shader = shaders/bloom025.glsl
+quit-after-last-window-closed=true
 
 keybind = f1=esc:[11~
 keybind = f2=esc:[12~
@@ -34,3 +38,4 @@ keybind = home=esc:[1~
 
 keybind = ctrl+s>\=new_split:right
 keybind = ctrl+s>-=new_split:down
+font-family = "Anonymous Pro"

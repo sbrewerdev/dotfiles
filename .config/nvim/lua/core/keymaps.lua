@@ -73,3 +73,14 @@ map("n", "zv", "zMzvzz", { desc = "Close all folds except the current one" })
 -- Plugin stuff (for managing plugins)
 -- ═══════════════════════════════════════════════════════════
 map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>")
+
+vim.g.copilot_no_tab_map = true
+
+map("i", "<C-g>", 'copilot#Accept("")', {
+    expr = true,
+    replace_keycodes = false,
+    desc = "Accept Copilot suggestion",
+})
+map("n", "<leader>ge", "<cmd>Copilot enable<cr>", { desc = "Enable Copilot" })
+map("n", "<leader>gd", "<cmd>Copilot disable<cr>", { desc = "Disable Copilot" })
+map("n", "<leader>gs", "<cmd>Copilot status<cr>", { desc = "Copilot Status" })

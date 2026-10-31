@@ -3,6 +3,7 @@ vim.pack.add({
 	{ src = "https://github.com/folke/tokyonight.nvim", name = "tokyonight" },
 	{ src = "https://github.com/rebelot/kanagawa.nvim", name = "kanagawa" },
     { src = "https://github.com/AvengeMedia/base46", name = "base46" },
+    { src = "https://github.com/schemar/blueberry-peach.nvim", name = "blueberry-peach" },
 	-- { src = "https://github.com/pankvitek/bonbon.nvim" },
 })
 

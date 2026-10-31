@@ -6,6 +6,7 @@ auto-reload-config = true
 after-startup-command = [
     # 'exec-and-forget borders active_color=0xfff26e27 inactive_color=0xff494d64 width=5.0',
 ]
+
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
@@ -18,10 +19,11 @@ persistent-workspaces = [
     "1", "2", "3", "4", "5", "6", "7", "8", "9",
     "A", "B", "C", "D", "E",
     "M", "N", "O", "P", "R", "S", "T", "U", "V",
+    "Z"
 ]
 
-# on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focused-monitor-changed = []
+on-focus-changed = ['move-mouse window-lazy-center'] # Mouse lazily follows any focus (window or workspace)
+# on-focused-monitor-changed = []
 
 focus-follows-mouse.enabled = false
 
@@ -42,6 +44,11 @@ on-window-detected = [
     },
 
     {
+        if = 'test %{app-bundle-id} = ai.krisp.krispMac',
+        run = 'move-node-to-workspace A',
+    },
+
+    {
         if = 'test %{app-bundle-id} = app.zen-browser.zen',
         run = 'move-node-to-workspace B',
     },
@@ -52,7 +59,7 @@ on-window-detected = [
     },
 
     {
-        if = 'test %{app-bundle-id} = org.dbgate',
+        if = 'test %{app-bundle-id} ~= com.jetbrains.datagrip',
         run = 'move-node-to-workspace D',
     },
 
@@ -72,7 +79,12 @@ on-window-detected = [
     },
 
     {
-        if = 'test %{app-bundle-id} = md.obsidian',
+        if = 'test %{app-bundle-id} = com.tunabelly.androidsms',
+        run = 'move-node-to-workspace M',
+    },
+
+    {
+        if = 'test %{app-bundle-id} = com.kingsoft.wpsoffice.mac.global',
         run = 'move-node-to-workspace O',
     },
 
@@ -93,7 +105,7 @@ on-window-detected = [
 
     {
         if = 'test %{app-bundle-id} = net.kovidgoyal.kitty',
-            run = 'move-node-to-workspace T',
+        run = 'move-node-to-workspace T',
     },
 
     {
@@ -114,6 +126,11 @@ on-window-detected = [
     {
         if = 'test %{app-bundle-id} = com.microsoft.Word',
         run = 'move-node-to-workspace W',
+    },
+
+    {
+        if = 'test %{app-bundle-id} = us.zoom.xos',
+        run = 'move-node-to-workspace Z',
     },
 
     {
@@ -169,10 +186,10 @@ ctrl-cmd-alt-slash = 'layout tiles vertical horizontal'
 ctrl-cmd-alt-comma = 'layout accordion vertical horizontal'
 
 # Focus
-ctrl-cmd-alt-h = 'focus --ignore-floating left'
-ctrl-cmd-alt-j = 'focus --ignore-floating down'
-ctrl-cmd-alt-k = 'focus --ignore-floating up'
-ctrl-cmd-alt-l = 'focus --ignore-floating right'
+ctrl-cmd-alt-h = 'focus left'
+ctrl-cmd-alt-j = 'focus down'
+ctrl-cmd-alt-k = 'focus up'
+ctrl-cmd-alt-l = 'focus right'
 
 # Move
 ctrl-cmd-alt-shift-h = 'move left'
@@ -185,10 +202,7 @@ ctrl-cmd-alt-minus = 'resize smart -50'
 ctrl-cmd-alt-equal = 'resize smart +50'
 
 # Fullscreen
-ctrl-cmd-alt-f = 'fullscreen'
-
-# Toggle floating / tiling
-ctrl-cmd-alt-shift-f = 'layout floating tiling'
+ctrl-cmd-alt-shift-f = 'fullscreen'
 
 # ---------------------------------------------------------------------------
 # Workspaces
@@ -218,6 +232,7 @@ ctrl-cmd-alt-s = 'workspace S'
 ctrl-cmd-alt-t = 'workspace T'
 ctrl-cmd-alt-u = 'workspace U'
 ctrl-cmd-alt-v = 'workspace V'
+ctrl-cmd-alt-z = 'workspace Z'
 
 # ---------------------------------------------------------------------------
 # Move window to workspace
@@ -249,6 +264,7 @@ ctrl-cmd-alt-shift-s = 'move-node-to-workspace S'
 ctrl-cmd-alt-shift-t = 'move-node-to-workspace T'
 ctrl-cmd-alt-shift-u = 'move-node-to-workspace U'
 ctrl-cmd-alt-shift-v = 'move-node-to-workspace V'
+ctrl-cmd-alt-shift-z = 'move-node-to-workspace Z'
 
 # ---------------------------------------------------------------------------
 # Workspace / monitor navigation
@@ -293,7 +309,8 @@ ctrl-cmd-alt-shift-semicolon = 'mode service'
 [mode.service.binding]
 
 # Leave service mode.
-esc = 'mode main'
+# esc = 'mode main'
+esc = ['reload-config', 'mode main']
 
 # Reset the current workspace layout.
 r = ['flatten-workspace-tree', 'mode main']

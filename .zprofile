@@ -1,16 +1,10 @@
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
-export PATH="/Users/sbrewer/.config/scripts:$PATH"
-export PATH="$PATH:/Users/sbrewer/.dotnet/tools"
-export PATH="$PATH:/Users/sbrewer/.cargo/bin"
+# Zsh login shell configuration
+export ZSH_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
-export WEZTERM_CONFIG_FILE="/Users/sbrewer/.config/wezterm/wezterm.lua"
-export STARSHIP_CONFIG="/Users/sbrewer/.config/starship/starship.toml"
-export EDITOR="nvim"
-# export NVIM_APPNAME="brewvim"
-export RESTERM_CONFIG_DIR="/Users/sbrewer/.config/resterm/"
+source "$ZSH_CONFIG_DIR/path.zsh"
+source "$ZSH_CONFIG_DIR/env.zsh"
 
-# Added by Toolbox App
-export PATH="$PATH:/Users/sbrewer/Library/Application Support/JetBrains/Toolbox/scripts"
-
-# Created by `pipx` on 2025-11-11 16:40:33
-export PATH="$PATH:/Users/sbrewer/.local/bin"
+# Machine-specific login configuration
+if [[ -f "$ZSH_CONFIG_DIR/local/profile.zsh" ]]; then
+    source "$ZSH_CONFIG_DIR/local/profile.zsh"
+fi

@@ -8,6 +8,7 @@ raycast/
 .config/spotatui/streaming_cache/credentials.json
 tmux/.config/tmux/plugins/
 zed/
-zsh/
+.config/zsh/local
+.config/wtf/log.txt
 
 **/.DS_Store
