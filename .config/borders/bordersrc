@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
-# options=(
-#     active_color=0xff29a329
-#     inactive_color=0xff3E1C9E
-#     width=5.0
-# )
+# Green for ACTIVE
+# Purple for INACTIVE
 options=(
-    active_color=0xffFF0055
-    inactive_color=0xff777777
+    active_color=0xff29a329
+    inactive_color=0xff3E1C9E
     width=5.0
 )
+
+# Salmon for ACTIVE
+# Gray for INACTIVE
+# options=(
+#     active_color=0xffFF0055
+#     inactive_color=0xff777777
+#     width=5.0
+# )
 
 borders "${options[@]}"
